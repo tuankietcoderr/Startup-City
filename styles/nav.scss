@@ -1,0 +1,67 @@
+@import "root";
+
+nav {
+  background-color: #fff;
+  color: $mainColor;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: bold;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  > div {
+    font-size: large;
+    @include center;
+  }
+  > ul {
+    margin: 0;
+    display: flex;
+    // justify-content: space-evenly;
+    li {
+      cursor: pointer;
+      display: grid;
+      place-items: centers;
+      position: relative;
+      &:last-child {
+        ul {
+          right: 0;
+        }
+      }
+      ul {
+        display: none;
+        width: max-content;
+        padding: 0;
+        border-radius: 5px;
+      }
+      &:hover {
+        ul {
+          position: absolute;
+          top: 100%;
+          display: block;
+          background-color: #fff;
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+
+          a {
+            &:hover {
+              background-color: $mainColor;
+            }
+          }
+        }
+      }
+    }
+    a {
+      padding: 1rem 1.4rem;
+      &:hover {
+        background-color: $mainColor;
+        color: $color;
+      }
+    }
+  }
+}
+
+.active {
+  background-color: #ff9b00;
+  color: #fff;
+}

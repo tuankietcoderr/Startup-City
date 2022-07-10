@@ -1,0 +1,32 @@
+$mainColor: #ff9b00;
+$color: #fff;
+$colorHover: #ff9b00;
+
+@mixin center {
+  display: grid;
+  place-items: center;
+}
+
+@mixin fullBody {
+  width: 100%;
+}
+
+@mixin marginBody {
+  margin: 0 10%;
+}
+
+.btn {
+  background-color: #0ccced;
+  color: #000;
+  border: 2px solid #000;
+  padding: 0.7rem 2rem;
+  border-radius: 100px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    color: $color;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+}

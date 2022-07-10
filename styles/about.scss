@@ -1,0 +1,84 @@
+@import "root";
+
+.about {
+  min-height: 100vh;
+  &__thumbnail {
+    background: url("/world_map.png") no-repeat center right;
+    background-color: #d4eaff;
+    min-height: calc(100vh - 52px);
+    position: relative;
+    padding: 1rem;
+    &-card {
+      width: max-content;
+      position: absolute;
+      padding: 1rem;
+      display: grid;
+      gap: 1rem;
+      top: 30%;
+      &-item {
+        background-color: #fff;
+        padding: 1rem 3rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+        > h1 {
+          font-size: 2.4em;
+          color: $mainColor;
+        }
+      }
+    }
+  }
+  &__content {
+    background-color: $mainColor;
+    color: $color;
+    overflow: hidden;
+    &--about {
+      position: relative;
+      padding: 1rem;
+      > img {
+        position: absolute;
+        &:first-child {
+          width: 300px;
+          right: 0;
+          top: 0;
+        }
+        &:nth-child(2) {
+          width: 140px;
+          bottom: 0;
+          left: 10%;
+        }
+      }
+      > div {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        > p {
+          line-height: 140%;
+        }
+        > div {
+          > img {
+            width: 100%;
+          }
+        }
+      }
+    }
+    @mixin about {
+      background-color: #fff;
+      padding: 1rem;
+      color: #000;
+    }
+    &--organization {
+      @include about;
+    }
+    &--coop {
+      @include about;
+    }
+    &--national-link {
+      @include about;
+    }
+    &--international-link {
+      @include about;
+    }
+    &--projects {
+      @include about;
+    }
+  }
+}
